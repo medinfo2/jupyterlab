@@ -1183,6 +1183,7 @@ function addCommands(
     },
     isEnabled
   });
+  /*
   commands.addCommand(CommandIDs.exportToFormat, {
     label: args => {
       const formatLabel = args['label'] as string;
@@ -1218,6 +1219,7 @@ function addCommands(
     },
     isEnabled
   });
+  */
   commands.addCommand(CommandIDs.restartClear, {
     label: 'Restart Kernel and Clear All Outputs…',
     execute: args => {
