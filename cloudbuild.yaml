@@ -1,0 +1,12 @@
+steps:
+- name: 'continuumio/miniconda3'
+  args: ['bash', './cloudbuild.sh']
+
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ['mb', '-l', 'asia-northeast2', 'gs://kuhp-jupyterlab/', '||', 'exit', '0']
+
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ['cp', 'medinfo.lab-2.0.0a1.tar.gz', 'gs://kuhp-jupyterlab/medinfo.lab-2.0.0a1.tar.gz']
+
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ['cp', 'dist/jupyterlab-2.0.0a1-py2.py3-none-any.whl', 'gs://kuhp-jupyterlab/jupyterlab-2.0.0a1-py2.py3-none-any.whl']
